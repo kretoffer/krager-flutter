@@ -33,11 +33,20 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> actions = [];
+    var a = IconButton(onPressed: (){
+          Navigator.of(context).pushNamed('/talker');
+        },
+        icon: const Icon(Icons.description));
+    actions.add(a);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: actions,
       ),
       body: (list == null)
         ? const Center(child: CircularProgressIndicator())
